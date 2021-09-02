@@ -107,11 +107,12 @@ bool ROSConveyorBeltPlugin::OnControlCommand(ros::ServiceEvent<
     return true;
   }
 
-  if (is_ariac_task_manager && !this->IsEnabled())
-  {
-    ROS_WARN_STREAM("Force enabling conveyor because power set by task manager.");
-    this->enabled = true;
-  }
+  // if (is_ariac_task_manager && !this->IsEnabled())
+  // {
+  //   ROS_WARN_STREAM("Force enabling conveyor because power set by task manager.");
+  //   this->enabled = true;
+  // }
+  this->enabled = true;  //edited for always enabling conveyor control
 
   if (!this->IsEnabled())
   {
